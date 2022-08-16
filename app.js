@@ -14,7 +14,7 @@ let db;
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 app.use(cors()) 
-let port = process.env.port || 9870;
+let port = process.env.PORT || 9870;
 
 
 // app.get('/', (req,res)=>{
