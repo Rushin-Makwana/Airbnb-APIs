@@ -17,37 +17,37 @@ app.use(cors())
 let port = process.env.port || 9870;
 
 
-app.get('/', (req,res)=>{
-    let islandid = Number(req.query.islandid)
-    let gt = Number(req.query.gt)
-    let lt = Number(req.query.lt)
-    let sort = {Price:1}
-    // console.log(sort);
-    let query ={}
-    if(lt && gt)
-    {
-        query = {$and:[{Price:{$gt:gt, $lt:lt}}]}
-    }
-    else if(islandid)
-    {                                                                                               
-        query = {island_id : islandid}
-    }
-    if(req.query.sort)
-    {
-        sort = {Price: req.query.sort }
-    }
-    db.collection('island').find(query).sort(sort).toArray((err, result)=>{
+// app.get('/', (req,res)=>{
+//     let islandid = Number(req.query.islandid)
+//     let gt = Number(req.query.gt)
+//     let lt = Number(req.query.lt)
+//     let sort = {Price:1}
+//     // console.log(sort);
+//     let query ={}
+//     if(lt && gt)
+//     {
+//         query = {$and:[{Price:{$gt:gt, $lt:lt}}]}
+//     }
+//     else if(islandid)
+//     {                                                                                               
+//         query = {island_id : islandid}
+//     }
+//     if(req.query.sort)
+//     {
+//         sort = {Price: req.query.sort }
+//     }
+//     db.collection('island').find(query).sort(sort).toArray((err, result)=>{
    
-        if(err) throw err
-        res.send(result)
+//         if(err) throw err
+//         res.send(result)
+//     })
+// })    
+     app.get('/', (req,res)=>{
+        db.collection('island').find().toArray((err,result)=>{
+            if(err) throw err;
+            res.send(result)
+        })
     })
-})    
-    //  app.get('/', (req,res)=>{
-    //     db.collection('island').find().toArray((err,result)=>{
-    //         if(err) throw err;
-    //         res.send(result)
-    //     })
-    // })
 // })
 app.get('/:collections', (req,res)=>{        //  As code is almost same fro beach and pool, this can be done 
     let sort = {Price:1} 
