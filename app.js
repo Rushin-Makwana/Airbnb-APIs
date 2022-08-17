@@ -43,7 +43,7 @@ app.get('/', (req,res)=>{
     })
 })    
      app.get('/island/:id', (req,res)=>{
-        let islandid = Number(req.params[id])
+        let islandid = Number(req.params['id'])
         let query ={}
         if(islandid)
         {                                                                                               
@@ -55,7 +55,7 @@ app.get('/', (req,res)=>{
         })
     })
     app.get('/beach/:id', (req,res)=>{
-        let beachid = Number(req.params[id])
+        let beachid = Number(req.params['id'])
         let query ={}
         if(beachid)
         {                                                                                               
@@ -67,7 +67,7 @@ app.get('/', (req,res)=>{
         })
     })
     app.get('/pool/:id', (req,res)=>{
-        let poolid = Number(req.params[id])
+        let poolid  = Number(req.params['id'])
         let query ={}
         if(poolid)
         {                                                                                               
