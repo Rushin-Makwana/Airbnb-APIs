@@ -17,8 +17,8 @@ app.use(cors())
 let port = process.env.PORT || 9870;
 
 
-app.get('/', (req,res)=>{
-    let islandid = Number(req.params.islandid)
+app.get('/:id', (req,res)=>{
+    let islandid = Number(req.params['id'])
     let gt = Number(req.query.gt)
     let lt = Number(req.query.lt)
     let sort = {Price:1}
