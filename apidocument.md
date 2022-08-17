@@ -5,14 +5,17 @@ http://localhost:6780/ -->
 
 # Getting islands(Get)
 http://localhost:8000/
+https://airbnb-by-rushin.herokuapp.com/
 
 # Getting Beaches (Get)
 http://localhost:8000/beach
+https://airbnb-by-rushin.herokuapp.com/beach
 
 # Getting Pools (Get)
 http://localhost:8000/pools
+https://airbnb-by-rushin.herokuapp.com/pool
 # Filter
-http://localhost:8000/pool?1&gt=2000&lt=20000
+http://localhost:8000/pool?&gt=2000&lt=20000
 http://localhost:8000/beach?1&gt=2000&lt=4000
 http://localhost:8000/island?1&gt=200&lt=4000
 # Sort (Ascending and Descending)
