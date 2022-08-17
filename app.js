@@ -17,8 +17,8 @@ app.use(cors())
 let port = process.env.PORT || 9870;
 
 
-app.get('/:id', (req,res)=>{
-    let islandid = Number(req.params['id'])
+app.get('/', (req,res)=>{
+    
     let gt = Number(req.query.gt)
     let lt = Number(req.query.lt)
     let sort = {Price:1}
@@ -42,12 +42,42 @@ app.get('/:id', (req,res)=>{
         res.send(result)
     })
 })    
-    //  app.get('/', (req,res)=>{
-    //     db.collection('island').find().toArray((err,result)=>{
-    //         if(err) throw err;
-    //         res.send(result)
-    //     })
-    // })
+     app.get('/island/:id', (req,res)=>{
+        let islandid = Number(req.params[id])
+        let query ={}
+        if(islandid)
+        {                                                                                               
+            query = {island_id : islandid}
+        }
+        db.collection('island').find(query).toArray((err,result)=>{
+            if(err) throw err;
+            res.send(result)
+        })
+    })
+    app.get('/beach/:id', (req,res)=>{
+        let beachid = Number(req.params[id])
+        let query ={}
+        if(beachid)
+        {                                                                                               
+            query = {beach_id : beachid}
+        }
+        db.collection('beach').find(query).toArray((err,result)=>{
+            if(err) throw err;
+            res.send(result)
+        })
+    })
+    app.get('/pool/:id', (req,res)=>{
+        let poolid = Number(req.params[id])
+        let query ={}
+        if(poolid)
+        {                                                                                               
+            query = {pool_id : poolid}
+        }
+        db.collection('pool').find(query).toArray((err,result)=>{
+            if(err) throw err;
+            res.send(result)
+        })
+    })
 // })
 app.get('/:collections', (req,res)=>{        //  As code is almost same fro beach and pool, this can be done 
     let sort = {Price:1} 
