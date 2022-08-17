@@ -18,7 +18,7 @@ let port = process.env.PORT || 9870;
 
 
 app.get('/', (req,res)=>{
-    let islandid = Number(req.query.islandid)
+    let islandid = Number(req.params)
     let gt = Number(req.query.gt)
     let lt = Number(req.query.lt)
     let sort = {Price:1}
@@ -84,6 +84,7 @@ app.get('/:collections', (req,res)=>{        //  As code is almost same fro beac
 app.get('/bookings/:id', (req,res)=>{
 
     let id = mongo.ObjectId(req.params.id)
+    console.log(id)
     let query = {}
     if(id)
     {
