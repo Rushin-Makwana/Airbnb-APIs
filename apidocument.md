@@ -36,16 +36,16 @@ https://airbnb-by-rushin.herokuapp.com/becomehost
 //page 2
 
 # Getting specific island details (Get)
-http://localhost:8000?islandid=1
-https://airbnb-by-rushin.herokuapp.com/?islandid=1
+http://localhost:8000/island/1
+https://airbnb-by-rushin.herokuapp.com/island/1
 
 # Getting specific beaches details (Get)
-http://localhost:8000/beach?beachid=1
-https://airbnb-by-rushin.herokuapp.com/beach?beachid=1
+http://localhost:8000/beach/1
+https://airbnb-by-rushin.herokuapp.com/beach/1
 
 # Getting specific Pools details (Get)
-http://localhost:8000/pool?poolid=1 
-https://airbnb-by-rushin.herokuapp.com/pool?poolid=1
+http://localhost:8000/pool/1 
+https://airbnb-by-rushin.herokuapp.com/pool/1
 
 
 //page 3
