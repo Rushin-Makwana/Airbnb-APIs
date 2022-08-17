@@ -18,7 +18,7 @@ let port = process.env.PORT || 9870;
 
 
 app.get('/', (req,res)=>{
-    
+    let islandid = Number(req.query.islandid)
     let gt = Number(req.query.gt)
     let lt = Number(req.query.lt)
     let sort = {Price:1}
